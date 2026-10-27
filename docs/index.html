@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>スライド一覧</title>
+<title>Quarto スライドテンプレートモデル</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -53,7 +53,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">スライド一覧</h1>
+<h1 class="title">Quarto スライドテンプレートモデル</h1>
 </div>
 
 
@@ -70,20 +70,28 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="プレゼン資料スライド一覧" class="level1">
-<h1>プレゼン資料・スライド一覧</h1>
-<p>Quarto + Reveal.js で作成されたスライド一覧です。</p>
-<section id="サンプルデモ" class="level3">
-<h3 class="anchored" data-anchor-id="サンプルデモ">🌟 サンプル・デモ</h3>
+<section id="プレゼン資料モデルマスター金型" class="level1">
+<h1>プレゼン資料モデル（マスター金型）</h1>
+<p>このリポジトリは、Quarto + Reveal.js でプレゼンテーション資料を作成するための<strong>汎用設計フレームワーク・テンプレート集</strong>です。</p>
+<section id="テンプレートデモ" class="level3">
+<h3 class="anchored" data-anchor-id="テンプレートデモ">🌟 テンプレート・デモ</h3>
 <ul>
-<li><a href="examples/demo.html">機能デモスライド（全スタイル・機能ショーケース）</a></li>
+<li>🎨 <a href="examples/demo.html">機能デモスライド（全スタイル・機能ショーケース）</a></li>
 </ul>
 </section>
-<section id="作成されたスライド" class="level3">
-<h3 class="anchored" data-anchor-id="作成されたスライド">📁 作成されたスライド</h3>
-<ul>
-<li><a href="20261027_一人暮らし説得_シラバス型.html">【実例】茨木での一人暮らしと大学4年間（シラバス型説得プレゼン）</a></li>
-</ul>
+<section id="同梱テンプレート一覧" class="level3">
+<h3 class="anchored" data-anchor-id="同梱テンプレート一覧">📦 同梱テンプレート一覧</h3>
+<ol type="1">
+<li><strong>汎用ベーシック (<code>templates/basic.qmd</code>)</strong>: 最小構成の汎用スライド</li>
+<li><strong>データ分析レポート (<code>templates/data-report.qmd</code>)</strong>: CSVやR/Pythonのグラフ埋め込み用</li>
+<li><strong>講義・ゼミ用 (<code>templates/lecture.qmd</code>)</strong>: タイムテーブルや演習ブロック付き</li>
+</ol>
+<hr>
+</section>
+<section id="新しい資料を作成するときの手順" class="level3">
+<h3 class="anchored" data-anchor-id="新しい資料を作成するときの手順">🚀 新しい資料を作成するときの手順</h3>
+<p>このディレクトリ内に個別資料は作らず、案件ごとのフォルダへテンプレートをコピーして使用します。</p>
+<p>詳細は <a href="README.md">README.md</a> および <a href="RULES.md">RULES.md</a> を参照してください。</p>
 <hr>
 <p><em>Powered by Quarto &amp; GitHub Pages</em></p>
 </section>

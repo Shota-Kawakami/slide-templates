@@ -1,75 +1,73 @@
 #!/bin/bash
 # ============================================================
-# new-slide.sh — テンプレートからスライドを新規作成
+# new-slide.sh — テンプレートを指定ディレクトリに複製・初期化
 # ============================================================
 # 使い方:
-#   ./scripts/new-slide.sh [テンプレート名] [タイトル]
+#   ./scripts/new-slide.sh [テンプレート名] [作成先ディレクトリ] [スライド名]
 #
 # 例:
-#   ./scripts/new-slide.sh basic "売上分析レポート"
-#   ./scripts/new-slide.sh data-report "Q3決算分析"
-#   ./scripts/new-slide.sh lecture "第5回 回帰分析"
+#   # カレント以外の別案件ディレクトリに作成する場合:
+#   ./scripts/new-slide.sh basic ~/Base/研究発表スライド "中間報告"
 #
-# テンプレート名を省略すると basic が使われます。
+# テンプレート名: basic | data-report | lecture (既定: basic)
 # ============================================================
 
 set -euo pipefail
 
-# --- このスクリプトのあるディレクトリからプロジェクトルートを取得 ---
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
+MASTER_DIR="$(dirname "$SCRIPT_DIR")"
 
-# --- 引数処理 ---
 TEMPLATE="${1:-basic}"
-TITLE="${2:-新規スライド}"
+TARGET_DIR="${2:-}"
+TITLE="${3:-プレゼンテーション}"
 
-# --- テンプレートファイルの確認 ---
-TEMPLATE_FILE="$PROJECT_DIR/templates/$TEMPLATE.qmd"
-if [ ! -f "$TEMPLATE_FILE" ]; then
-    echo "❌ テンプレートが見つかりません: $TEMPLATE_FILE"
+if [ -z "$TARGET_DIR" ]; then
+    echo "❌ 作成先のディレクトリパスを指定してください。"
+    echo "使い方: $0 [テンプレート名] [作成先ディレクトリ] [スライド名]"
     echo ""
-    echo "使えるテンプレート:"
-    ls "$PROJECT_DIR/templates/"*.qmd 2>/dev/null | while read f; do
-        basename "$f" .qmd
-    done
+    echo "例: $0 basic ~/Base/新プロジェクト \"プロジェクト企画\""
     exit 1
 fi
 
-# --- 出力ファイル名を生成 ---
+TEMPLATE_FILE="$MASTER_DIR/templates/$TEMPLATE.qmd"
+if [ ! -f "$TEMPLATE_FILE" ]; then
+    echo "❌ テンプレートが見つかりません: $TEMPLATE_FILE"
+    echo "使えるテンプレート: basic, data-report, lecture"
+    exit 1
+fi
+
+mkdir -p "$TARGET_DIR"
+cd "$TARGET_DIR"
+
+# テーマと設定をコピー（まだ存在しない場合）
+if [ ! -d "$TARGET_DIR/themes" ]; then
+    cp -r "$MASTER_DIR/themes" "$TARGET_DIR/"
+fi
+if [ ! -f "$TARGET_DIR/_quarto.yml" ]; then
+    cp "$MASTER_DIR/_quarto.yml" "$TARGET_DIR/"
+fi
+
+# スライドファイルの作成
 DATE_PREFIX="$(date +%Y%m%d)"
-# タイトルからファイル名に使えない文字を除去
 SAFE_TITLE="$(echo "$TITLE" | tr '/' '_' | tr ' ' '_')"
-OUTPUT_FILE="$PROJECT_DIR/${DATE_PREFIX}_${SAFE_TITLE}.qmd"
+SLIDE_FILE="${DATE_PREFIX}_${SAFE_TITLE}.qmd"
 
-# --- 既存チェック ---
-if [ -f "$OUTPUT_FILE" ]; then
-    echo "⚠️  ファイルが既に存在します: $OUTPUT_FILE"
-    read -p "上書きしますか? (y/N): " CONFIRM
-    if [ "$CONFIRM" != "y" ] && [ "$CONFIRM" != "Y" ]; then
-        echo "中止しました。"
-        exit 0
-    fi
-fi
+cp "$TEMPLATE_FILE" "$SLIDE_FILE"
 
-# --- コピー ---
-cp "$TEMPLATE_FILE" "$OUTPUT_FILE"
-
-# --- タイトルを置換 ---
+# タイトル置換 (macOS / Linux 互換)
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    # macOS の sed
-    sed -i '' "s/タイトルを入力/$TITLE/g" "$OUTPUT_FILE"
-    sed -i '' "s/データ分析タイトル/$TITLE/g" "$OUTPUT_FILE"
-    sed -i '' "s/講義タイトル/$TITLE/g" "$OUTPUT_FILE"
+    sed -i '' "s/タイトルを入力/$TITLE/g" "$SLIDE_FILE"
+    sed -i '' "s/データ分析タイトル/$TITLE/g" "$SLIDE_FILE"
+    sed -i '' "s/講義タイトル/$TITLE/g" "$SLIDE_FILE"
 else
-    sed -i "s/タイトルを入力/$TITLE/g" "$OUTPUT_FILE"
-    sed -i "s/データ分析タイトル/$TITLE/g" "$OUTPUT_FILE"
-    sed -i "s/講義タイトル/$TITLE/g" "$OUTPUT_FILE"
+    sed -i "s/タイトルを入力/$TITLE/g" "$SLIDE_FILE"
+    sed -i "s/データ分析タイトル/$TITLE/g" "$SLIDE_FILE"
+    sed -i "s/講義タイトル/$TITLE/g" "$SLIDE_FILE"
 fi
 
-echo "✅ 作成しました: $OUTPUT_FILE"
+echo "✅ 新規スライド環境を初期化しました:"
+echo "   場所: $TARGET_DIR/$SLIDE_FILE"
 echo ""
 echo "次のステップ:"
-echo "  1. ファイルを開いて内容を編集"
-echo "  2. quarto preview $OUTPUT_FILE  # ライブプレビュー"
-echo "  3. quarto render $OUTPUT_FILE   # HTMLに変換"
-
+echo "   cd $TARGET_DIR"
+echo "   quarto preview $SLIDE_FILE"
