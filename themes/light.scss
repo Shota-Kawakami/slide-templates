@@ -1,0 +1,140 @@
+// ============================================================
+// ライトテーマ（白背景・Dracula 系カラーアクセント）
+// ============================================================
+
+/*-- scss:defaults --*/
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400&family=Noto+Sans+JP:wght@400;700;900&display=swap');
+
+$systemFontsSansSerif: -apple-system,
+                       BlinkMacSystemFont,
+                       segoe ui,
+                       helvetica neue,
+                       helvetica,
+                       noto;
+$systemFontsMono: Fira Code,
+                  Menlo,
+                  Consolas,
+                  Monaco,
+                  Liberation Mono,
+                  monospace;
+
+// --- ライト配色 ---
+$background:  #FFFFFF;
+$foreground:  #282A36;
+$selection:   #E8E8EC;
+$comment:     #879DDE;
+$red:         #9F3535;
+$orange:      #B1712C;
+$yellow:      #808923;
+$green:       #0C6B27;
+$purple:      #7C3AED;
+$cyan:        #0891B2;
+$pink:        #DB2777;
+$lightgray:   #F5F5F5;
+
+// --- Reveal.js テーマ変数 ---
+$mainColor:                $foreground;
+$headingColor:             $purple;
+$headingTextShadow:        none;
+$headingTextTransform:     none;
+$backgroundColor:          $background;
+$linkColor:                $cyan;
+$linkColorHover:           $pink;
+$selectionBackgroundColor: $selection;
+$inlineCodeColor:          $green;
+$listBulletColor:          $purple;
+$code-block-bg:            $lightgray;
+$code-block-border-color:  $selection;
+$code-block-color:         $foreground;
+$mainFont:                 "Noto Sans JP", $systemFontsSansSerif;
+$codeFont:                 $systemFontsMono;
+$presentation-heading-font: "Noto Sans JP";
+$presentation-heading-font-weight: 900;
+$code-block-font-size:     0.8em;
+
+$tableHeadBorderColor:  $selection;
+$tableCellBorderColor:  $selection;
+
+:root {
+  --r-bold-color:        #{$foreground};
+  --r-italic-color:      #{$cyan};
+  --r-inline-code-color: #{$inlineCodeColor};
+  --r-list-bullet-color: #{$listBulletColor};
+  --sk-surface:          #{$selection};
+  --sk-muted:            #{$comment};
+}
+
+/*-- scss:rules --*/
+
+.reveal {
+  strong, b {
+    color: var(--r-bold-color);
+    font-weight: 700;
+  }
+  em, i {
+    color: var(--r-italic-color);
+  }
+  code {
+    color: var(--r-inline-code-color);
+  }
+
+  ul, ol {
+    li::marker {
+      color: var(--r-list-bullet-color);
+    }
+  }
+
+  blockquote {
+    color: var(--sk-muted);
+    background: none;
+    box-shadow: none;
+    border-left: 4px solid #{$purple};
+    padding-left: .8em;
+    font-style: normal;
+  }
+
+  h2::after {
+    content: "";
+    display: block;
+    width: 2.2em;
+    height: 4px;
+    margin-top: .25em;
+    background: linear-gradient(90deg, #{$purple}, #{$pink});
+    border-radius: 2px;
+  }
+
+  table {
+    th {
+      background: var(--sk-surface);
+      color: #{$foreground};
+    }
+    tbody tr:nth-child(even) {
+      background: rgba(0, 0, 0, .03);
+    }
+  }
+
+  .quarto-figure img, p > img {
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+  }
+
+  .cell-output pre,
+  .cell-output-stdout pre,
+  .cell-output-stderr pre,
+  .cell-output-display pre {
+    background: #{$lightgray} !important;
+    color: #{$foreground} !important;
+    border: 1px solid #{$selection};
+    border-radius: 0 0 6px 6px;
+    box-shadow: none;
+  }
+  pre code {
+    background-color: transparent !important;
+  }
+  div.sourceCode {
+    border-radius: 6px 6px 0 0;
+    margin-bottom: 0;
+  }
+}
+

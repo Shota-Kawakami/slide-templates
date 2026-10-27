@@ -1,0 +1,130 @@
+---
+# ============================================================
+# data-report.qmd — データ分析レポート用テンプレート
+# ============================================================
+# CSVデータを読み込み、可視化しながらストーリーを伝えるスライド。
+# R (knitr) を使用。Python に切り替える場合は engine: jupyter に。
+# ============================================================
+title: |
+  <b>データ分析タイトル</b> <br>
+  <span style="color: #8BE9FD;">副題・データソース名</span>
+author: "著者名"
+date: today
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r setup}
+#| include: false
+
+library(ggplot2)
+library(dplyr)
+library(scales)
+
+# --- データ読み込み ---
+# df <- read.csv("your_data.csv")
+
+# --- テーマカラー定義（Dracula パレット） ---
+# ggplot の背景色をスライドの背景と揃えるために必要
+dr <- list(
+  bg      = "#282A36",
+  surface = "#44475A",
+  fg      = "#F8F8F2",
+  muted   = "#6272A4",
+  purple  = "#BD93F9",
+  cyan    = "#8BE9FD",
+  pink    = "#FF79C6",
+  green   = "#50FA7B",
+  yellow  = "#F1FA8C",
+  orange  = "#FFB86C",
+  red     = "#FF5555"
+)
+
+# --- ggplot テーマをスライドに最適化 ---
+theme_set(
+  theme_minimal(base_family = "Hiragino Sans", base_size = 18) +
+    theme(
+      plot.background  = element_rect(fill = dr$bg, colour = NA),
+      panel.background = element_rect(fill = dr$bg, colour = NA),
+      legend.background = element_rect(fill = dr$bg, colour = NA),
+      legend.key       = element_rect(fill = dr$bg, colour = NA),
+      text        = element_text(colour = dr$fg),
+      axis.text   = element_text(colour = dr$muted),
+      axis.title  = element_text(colour = dr$fg),
+      plot.title    = element_text(face = "bold", size = 22, colour = dr$fg),
+      plot.subtitle = element_text(size = 15, colour = dr$muted),
+      panel.grid.major = element_line(colour = dr$surface, linewidth = .3),
+      panel.grid.minor = element_blank(),
+      strip.text = element_text(colour = dr$cyan, face = "bold", size = 15)
+    )
+)
+```
+
+## データの概要
+
+```{r}
+#| echo: true
+#| eval: false
+
+# --- ここにデータ探索のコードを書く ---
+# df |> glimpse()
+# df |> count(category, sort = TRUE) |> head(5)
+```
+
+::: {.code-output}
+データの要約を文章で書く。
+全 N 件、M カテゴリのデータです。
+:::
+
+## 可視化①：散布図
+
+```{r}
+#| eval: false
+
+# ggplot(df, aes(x_var, y_var)) +
+#   geom_point(alpha = .5, colour = dr$cyan, size = 2.5) +
+#   geom_smooth(method = "lm", se = TRUE,
+#               colour = dr$pink, fill = dr$surface, alpha = .6) +
+#   labs(x = "X軸ラベル", y = "Y軸ラベル",
+#        subtitle = "図の説明")
+```
+
+## 可視化②：カテゴリ比較
+
+```{r}
+#| eval: false
+
+# df |>
+#   group_by(category) |>
+#   summarise(mean_val = mean(value)) |>
+#   ggplot(aes(mean_val, reorder(category, mean_val))) +
+#   geom_col(fill = dr$purple, alpha = .85) +
+#   labs(x = "値", y = NULL,
+#        subtitle = "カテゴリ別の集計")
+```
+
+## 分析結果
+
+```{r}
+#| echo: true
+#| eval: false
+
+# model <- lm(y ~ x, data = df)
+# summary(model)$coefficients
+```
+
+::: {.code-output}
+分析結果の解釈をここに書く。
+<span class="markp">**重要な発見**</span>を強調する。
+:::
+
+## まとめ
+
+| 項目 | 結果 |
+|---|---|
+| 発見1 | 説明 |
+| 発見2 | 説明 |
+| 次のステップ | 説明 |
+

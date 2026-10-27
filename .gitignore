@@ -1,0 +1,36 @@
+# ============================================================
+# .gitignore — プレゼン資料モデル
+# ============================================================
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Quarto
+.quarto/
+_freeze/
+
+# R
+.Rhistory
+.Rdata
+.RData
+.Rproj.user/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# エディタ
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# docs/ は GitHub Pages 用なので追跡する（.gitignore しない）
+# output/ は旧設定の残骸
+output/
+
+/.quarto/
+**/*.quarto_ipynb

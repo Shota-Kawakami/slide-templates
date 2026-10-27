@@ -1,0 +1,162 @@
+// ============================================================
+// Dracula テーマ（ダーク配色）
+// Based on: https://draculatheme.com/contribute
+// ============================================================
+
+/*-- scss:defaults --*/
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400&family=Noto+Sans+JP:wght@400;700;900&display=swap');
+
+// --- システムフォントスタック ---
+$systemFontsSansSerif: -apple-system,
+                       BlinkMacSystemFont,
+                       segoe ui,
+                       helvetica neue,
+                       helvetica,
+                       noto;
+$systemFontsMono: Fira Code,
+                  Menlo,
+                  Consolas,
+                  Monaco,
+                  Liberation Mono,
+                  monospace;
+
+// --- Dracula カラーパレット ---
+$background:  #282A36;
+$foreground:  #F8F8F2;
+$selection:   #44475A;
+$comment:     #6272A4;
+$red:         #FF5555;
+$orange:      #FFB86C;
+$yellow:      #F1FA8C;
+$green:       #50FA7B;
+$purple:      #BD93F9;
+$cyan:        #8BE9FD;
+$pink:        #FF79C6;
+$black:       #21222C;
+
+// --- Reveal.js テーマ変数の上書き ---
+$mainColor:                $foreground;
+$headingColor:             $purple;
+$headingTextShadow:        none;
+$headingTextTransform:     none;
+$backgroundColor:          $background;
+$linkColor:                $cyan;
+$linkColorHover:           $pink;
+$selectionBackgroundColor: $selection;
+$inlineCodeColor:          $green;
+$listBulletColor:          $cyan;
+$code-block-bg:            $black;
+$code-block-border-color:  $selection;
+$code-block-color:         $foreground;
+$mainFont:                 "Noto Sans JP", $systemFontsSansSerif;
+$codeFont:                 $systemFontsMono;
+$presentation-heading-font: "Noto Sans JP";
+$presentation-heading-font-weight: 900;
+$code-block-font-size:     0.8em;
+
+// --- 表 ---
+$tableHeadBorderColor:  $selection;
+$tableCellBorderColor:  $selection;
+
+// --- カスタムプロパティ ---
+:root {
+  --r-bold-color:        #{$yellow};
+  --r-italic-color:      #{$cyan};
+  --r-inline-code-color: #{$inlineCodeColor};
+  --r-list-bullet-color: #{$listBulletColor};
+  --sk-surface:          #{$selection};
+  --sk-muted:            #{$comment};
+}
+
+/*-- scss:rules --*/
+
+.reveal {
+  // --- テキスト装飾 ---
+  strong, b {
+    color: var(--r-bold-color);
+    font-weight: 700;
+  }
+  em, i {
+    color: var(--r-italic-color);
+  }
+  code {
+    color: var(--r-inline-code-color);
+  }
+
+  // --- リスト ---
+  ul, ol {
+    li::marker {
+      color: var(--r-list-bullet-color);
+    }
+  }
+
+  // --- 引用 ---
+  blockquote {
+    color: var(--sk-muted);
+    background: none;
+    box-shadow: none;
+    border-left: 4px solid #{$purple};
+    padding-left: .8em;
+    font-style: normal;
+  }
+
+  // --- 見出し下線 ---
+  h2::after {
+    content: "";
+    display: block;
+    width: 2.2em;
+    height: 4px;
+    margin-top: .25em;
+    background: linear-gradient(90deg, #{$purple}, #{$pink});
+    border-radius: 2px;
+  }
+
+  // --- 表 ---
+  table {
+    th {
+      background: var(--sk-surface);
+      color: #{$foreground};
+    }
+    tbody tr:nth-child(even) {
+      background: rgba(255, 255, 255, .03);
+    }
+  }
+
+  // --- 画像 ---
+  .quarto-figure img, p > img {
+    border-radius: 6px;
+  }
+
+  // --- コード出力ブロック ---
+  .cell-output pre,
+  .cell-output-stdout pre,
+  .cell-output-stderr pre,
+  .cell-output-display pre {
+    background: #{$black} !important;
+    color: #{$foreground} !important;
+    border: 1px solid #{$selection};
+    border-radius: 0 0 6px 6px;
+    box-shadow: none;
+  }
+  pre code {
+    background-color: transparent !important;
+  }
+  .cell-output pre code,
+  .cell-output-stdout pre code {
+    color: #{$foreground} !important;
+    background-color: transparent !important;
+  }
+  // コードブロックと出力を続きの箱に見せる
+  div.sourceCode {
+    border-radius: 6px 6px 0 0;
+    margin-bottom: 0;
+  }
+}
+
+// --- 章扉スライド ---
+.reveal .slide.title-slide,
+.reveal section.has-dark-background {
+  background: radial-gradient(ellipse at 30% 20%, #{$selection} 0%, #{$background} 70%);
+}
+

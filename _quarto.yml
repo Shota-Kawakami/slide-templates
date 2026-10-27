@@ -1,0 +1,53 @@
+# ============================================================
+# プレゼン資料モデル — Quarto プロジェクト共通設定
+# ============================================================
+# 各 .qmd は、ここに書いた設定を自動で継承します。
+# 個別の .qmd の YAML ヘッダで同じキーを書けば上書きできます。
+# ============================================================
+
+project:
+  type: default
+  output-dir: docs            # GitHub Pages 用（/docs フォルダを公開）
+
+format:
+  revealjs:
+    # --- テーマ ---
+    # "default" を土台に dracula.scss を重ねる
+    # ライト配色にしたいときは dracula.scss → light.scss に変更
+    theme: [default, themes/dracula.scss]
+
+    # --- レイアウト ---
+    width: 1400
+    height: 800
+    margin: 0.1
+    slide-number: true
+    controls: true
+    transition: convex
+
+    # --- コードブロック ---
+    code-line-numbers: false
+    highlight-style: github
+
+    # --- 数式 ---
+    html-math-method: katex
+
+    # --- フッター ---
+    # プロジェクトごとに書き換える
+    footer: ""
+
+# --- 共通CSS（囲み・マーカー等の部品） ---
+css: [themes/shared.css]
+
+# --- 実行エンジン ---
+# R を使う場合は knitr、Python のみなら jupyter
+engine: knitr
+
+# --- コード実行の既定値 ---
+execute:
+  echo: false               # コードは既定で隠す
+  warning: false
+  message: false
+  fig-width: 11
+  fig-height: 5.5
+  dpi: 150
+

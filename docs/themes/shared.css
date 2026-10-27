@@ -1,0 +1,108 @@
+/* ============================================================
+   共通スタイル部品
+   テーマ（ダーク / ライト）に依存しないスタイルクラス。
+   各テーマの CSS 変数を参照することで、どちらでも動く。
+   ============================================================ */
+
+/* --- 囲みボックス（強調・要約・注意書き用） --- */
+.code-output {
+  border: 2px solid #50FA7B;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(80, 250, 123, 0.08);
+  position: relative;
+}
+
+.code-output::before {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  padding: 0 5px;
+  border-radius: 3px;
+  transform: translateY(-50%);
+}
+
+/* 注意ボックス */
+.warning-box {
+  border: 2px solid #FF5555;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(255, 85, 85, 0.08);
+}
+
+/* 情報ボックス */
+.info-box {
+  border: 2px solid #8BE9FD;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(139, 233, 253, 0.08);
+}
+
+/* --- 蛍光マーカー --- */
+
+/* 黄色マーカー */
+.marky {
+  background: linear-gradient(transparent 60%, rgba(241, 250, 140, 0.35) 0%);
+}
+
+/* ピンクマーカー */
+.markp {
+  background: linear-gradient(transparent 60%, rgba(255, 121, 198, 0.35) 0%);
+}
+
+/* 緑マーカー */
+.markg {
+  background: linear-gradient(transparent 60%, rgba(80, 250, 123, 0.35) 0%);
+}
+
+/* シアンマーカー */
+.markc {
+  background: linear-gradient(transparent 60%, rgba(139, 233, 253, 0.35) 0%);
+}
+
+/* --- テキストカラー強調 --- */
+.orange-bold {
+  color: #FFB86C;
+  font-weight: bold;
+}
+
+.cyan-bold {
+  color: #8BE9FD;
+  font-weight: bold;
+}
+
+.pink-bold {
+  color: #FF79C6;
+  font-weight: bold;
+}
+
+.green-bold {
+  color: #50FA7B;
+  font-weight: bold;
+}
+
+/* --- レイアウトヘルパー --- */
+
+/* 大きなテキスト（タイトルスライド用） */
+.big-text {
+  font-size: 1.8em;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+/* 小さなテキスト（出典・注記用） */
+.small-text {
+  font-size: 0.7em;
+  opacity: 0.7;
+}
+
+/* 中央揃え */
+.center-text {
+  text-align: center;
+}
+
+/* mermaid 図をスライドに収める */
+.diagram-fit .mermaid {
+  max-height: 500px;
+}
+
