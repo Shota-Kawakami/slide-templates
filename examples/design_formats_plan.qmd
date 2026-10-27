@@ -1,0 +1,256 @@
+---
+title: |
+  <b>デザインフォーマット設計プラン</b> <br>
+  <span style="color: #8BE9FD; font-size: 0.8em;">場面・目的に応じた5つの配色とフォント体系</span>
+author: "プレゼン資料モデル マスター金型"
+date: today
+format:
+  revealjs:
+    theme: [default, ../themes/dracula.scss]
+    slide-number: true
+    transition: slide
+    width: 1400
+    height: 800
+css: [../themes/shared.css]
+---
+
+## このスライドの目的
+
+::: {.code-output}
+**「誰に、何を、どんな雰囲気で伝えるか」** に応じて、
+スライドの **配色（SCSS）** と **フォント（Webフォント）** を1行で切り替えられる設計を構築します。
+:::
+
+<br>
+
+::: {.incremental}
+- PowerPointのようにマウスでフォントや色を1ページずつ直す必要はありません
+- YAMLの `theme:` を1行変えるだけで、全スライドがその世界観に染まります
+- どのPC（Mac/Windows/スマホ）で見ても同じフォントで美しく表示されます
+:::
+
+# 1. 5つのデザインフォーマット一覧
+
+## 場面別マトリクス {.smaller}
+
+| # | フォーマット名 | 主な場面・用途 | 印象・トーン | 背景 | 主フォント | キーカラー |
+|---|---|---|---|---|---|---|
+| **1** | **Academic** | 学会、卒論、学術ゼミ、研究報告 | 誠実・知性・厳格 | オフホワイト | 游明朝 / Noto Serif JP | 知的ネイビー `#1E3A8A` |
+| **2** | **Business** | 企画提案、ピッチ、親の説得 | 洗練・説得力・明瞭 | クリーン白 | Noto Sans JP (太字) | ロイヤルブルー `#2563EB` |
+| **3** | **Tech / Data** | 分析報告、プログラミング | 先進的・開発者感 | ダーク (Dracula) | Fira Code / 等幅 | シアン `#8BE9FD` |
+| **4** | **Education** | 講義、WS、新歓ガイダンス | 親しみやすさ・温かみ | クリーム地 | 丸みゴシック (Zen Kaku) | テラコッタ橙 `#EA580C` |
+| **5** | **Minimal** | エグゼクティブ、基調講演 | 極限の削ぎ落とし・高級 | 純白 / 漆黒 | しっぽり明朝 / Montserrat | モノトーン + 1色赤 |
+
+# 2. どのフォーマットを選ぶべきか？
+
+## 選び方フローチャート {.diagram-fit}
+
+```{mermaid}
+%%| echo: false
+flowchart TD
+    Start["プレゼンの目的と相手は？"] --> Q1{"学術・論文・研究発表？"}
+    Q1 -->|Yes| A["① Academic<br/>(明朝体・ネイビー・厳格)"]
+    Q1 -->|No| Q2{"コードやグラフが主役？"}
+    
+    Q2 -->|Yes| B["③ Tech / Data<br/>(Draculaダーク・等幅コード)"]
+    Q2 -->|No| Q3{"親しみやすさ・ワーク重視？"}
+    
+    Q3 -->|Yes| C["④ Education<br/>(クリーム地・やわらかゴシック)"]
+    Q3 -->|No| Q4{"文字を極限まで減らしたトーク？"}
+    
+    Q4 -->|Yes| D["⑤ Minimal<br/>(白黒ハイコントラスト・高級感)"]
+    Q4 -->|No| E["② Business<br/>(王道ホワイト・ロイヤルブルー)"]
+    
+    style A fill:#1E3A8A,color:#fff
+    style B fill:#282A36,color:#8BE9FD
+    style C fill:#EA580C,color:#fff
+    style D fill:#111111,color:#fff
+    style E fill:#2563EB,color:#fff
+```
+
+# 3. 各フォーマットの詳細仕様
+
+## ① Academic（学術・研究用）
+
+::: {.columns}
+::: {.column width="50%"}
+### 想定シーン
+- 卒業論文 / 修士論文の発表
+- 学会報告、研究会
+- 教授・専門家向けの学術ゼミ
+
+### デザイン特性
+- **背景**：純白より反射を抑えた薄いグレー/オフホワイト
+- **文字**：明朝体で縦のラインを強調し、論文のような重厚感
+- **アクセント**：伝統的なネイビー（深藍）
+:::
+::: {.column width="50%"}
+::: {.code-output}
+**フォントスタック**：
+- 和文：`Noto Serif JP`, `Yu Mincho`, 明朝体
+- 欧文：`EB Garamond`, `Times New Roman`
+
+**キーカラー**：
+- 主色：`#1E3A8A` (Deep Navy)
+- 差し色：`#881337` (Wine Red)
+:::
+:::
+:::
+
+## ② Business（提案・ピッチ用）
+
+::: {.columns}
+::: {.column width="50%"}
+### 想定シーン
+- 新規事業ピッチ、企画提案
+- クライアント向け報告会
+- 親への一人暮らし説得プレゼン
+
+### デザイン特性
+- **背景**：清潔感と明瞭さのクリーンホワイト
+- **文字**：視認性が最も高いモダンサンセリフ
+- **アクセント**：知性と行動力を表す鮮やかなブルー
+:::
+::: {.column width="50%"}
+::: {.code-output}
+**フォントスタック**：
+- 和文：`Noto Sans JP` (ウェイト 700〜900 活用)
+- 欧文：`Plus Jakarta Sans` / `Inter`
+
+**キーカラー**：
+- 主色：`#2563EB` (Royal Blue)
+- 強調：`#F59E0B` (Amber Orange)
+:::
+:::
+:::
+
+## ③ Tech / Data（技術・分析用）
+
+::: {.columns}
+::: {.column width="50%"}
+### 想定シーン
+- データサイエンス・回帰分析の発表
+- エンジニア向け技術共有会
+- 薄暗い会場や画面共有での長時間の発表
+
+### デザイン特性
+- **背景**：定評のある Dracula ダーク（目の疲労軽減）
+- **文字**：コードブロックが美しく映える等幅フォント
+- **アクセント**：シアン、パープル、ネオングリーン
+:::
+::: {.column width="50%"}
+::: {.code-output}
+**フォントスタック**：
+- 等幅：`Fira Code`, `JetBrains Mono`
+- 本文：`Noto Sans JP`
+
+**キーカラー**：
+- 背景：`#282A36`
+- 主色：`#8BE9FD` (Cyan), `#BD93F9` (Purple)
+:::
+:::
+:::
+
+## ④ Education（講義・ワークショップ用）
+
+::: {.columns}
+::: {.column width="50%"}
+### 想定シーン
+- 大学の授業・ガイダンス
+- ペアワークや演習を含むワークショップ
+- 後輩向けの勉強会や新歓プレゼン
+
+### デザイン特性
+- **背景**：温かみがあり緊張をほぐすソフトクリーム
+- **文字**：角が少し丸みを帯びた読みやすいゴシック
+- **アクセント**：親しみやすいテラコッタ橙とフォレスト緑
+:::
+::: {.column width="50%"}
+::: {.code-output}
+**フォントスタック**：
+- 和文：`Zen Kaku Gothic New`, 角ゴシック
+- 欧文：`Quicksand`, サンセリフ
+
+**キーカラー**：
+- 背景：`#FDFBF7` (Soft Cream)
+- 主色：`#EA580C` (Terracotta), `#15803D` (Forest)
+:::
+:::
+:::
+
+## ⑤ Minimal（基調講演・TED風）
+
+::: {.columns}
+::: {.column width="50%"}
+### 想定シーン
+- キーノートスピーチ、基調講演
+- エグゼクティブ向け直球メッセージ
+- 「1枚に写真1枚と1言だけ」のトーク
+
+### デザイン特性
+- **背景**：完全な純白（または漆黒）
+- **文字**：無駄のない幾何学的フォント
+- **アクセント**：モノトーンの中に鮮烈な赤/ピンクを1色のみ
+:::
+::: {.column width="50%"}
+::: {.code-output}
+**フォントスタック**：
+- 和文：`Shippori Mincho`（しっぽり明朝）
+- 欧文：`Montserrat`, 幾何学サンセリフ
+
+**キーカラー**：
+- 背景：`#FFFFFF` (or `#111111`)
+- 文字：`#18181B` (Zinc Black)
+- 差し色：`#E11D48` (Rose 1色のみ)
+:::
+:::
+:::
+
+# 4. 使い方と切り替え手順
+
+## 実際の切り替え方法（たった1行）
+
+スライドファイル（`.qmd`）の先頭にある YAML ヘッダーの `theme:` を書き換えるだけです。
+
+```yaml
+---
+title: "マーケティング戦略提案"
+author: "川上 翔大"
+format:
+  revealjs:
+    # ↓ ここを選ぶだけ！
+    theme: [default, themes/theme-business.scss]   # ビジネス用
+    # theme: [default, themes/theme-academic.scss]  # 学会・研究用
+    # theme: [default, themes/theme-tech.scss]      # データ・テック用
+    # theme: [default, themes/theme-education.scss] # 講義・教育用
+    # theme: [default, themes/theme-minimal.scss]   # ミニマル用
+---
+```
+
+::: {.code-output}
+スライド内の本文・見出し・囲みボックス・マーカーは**全テーマで互換性**があります。
+本文を書き直すことなく、テーマの行を変えるだけで一瞬で雰囲気がガラリと変わります。
+:::
+
+---
+
+## 実装計画
+
+::: {.incremental}
+1. **SCSSテーマの作成**：
+   - `themes/theme-academic.scss`
+   - `themes/theme-business.scss`
+   - `themes/theme-tech.scss` *(既存draculaから整理)*
+   - `themes/theme-education.scss`
+   - `themes/theme-minimal.scss`
+2. **ルールへの追加**：
+   - `RULES.md` に選択フローチャートと各テーマの仕様を掲載
+3. **新規作成スクリプトの拡張**：
+   - `./scripts/new-slide.sh basic business ...` のようにテーマ指定可能に
+:::
+
+<br>
+
+<div style="text-align: center;">
+<span class="markp" style="font-size: 1.2em;">このプランで実装を進めてよろしいでしょうか？</span>
+</div>

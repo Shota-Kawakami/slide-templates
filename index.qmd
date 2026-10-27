@@ -12,6 +12,7 @@ format:
 
 ### 🌟 テンプレート・デモ
 - 🎨 [機能デモスライド（全スタイル・機能ショーケース）](examples/demo.html)
+- 📐 [【NEW】デザインフォーマット設計プラン（5つの配色・フォント体系）](examples/design_formats_plan.html)
 
 ### 📦 同梱テンプレート一覧
 1. **汎用ベーシック (`templates/basic.qmd`)**: 最小構成の汎用スライド
