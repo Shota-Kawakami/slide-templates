@@ -1,0 +1,20 @@
+---
+title: "スライド一覧"
+format:
+  html:
+    theme: cosmo
+    toc: false
+---
+
+# プレゼン資料・スライド一覧
+
+Quarto + Reveal.js で作成されたスライド一覧です。
+
+### 🌟 サンプル・デモ
+- [機能デモスライド（全スタイル・機能ショーケース）](examples/demo.html)
+
+### 📁 作成されたスライド
+- （新しいスライドを作成・ビルドするとここに追加できます）
+
+---
+*Powered by Quarto & GitHub Pages*
