@@ -2,7 +2,28 @@
 
 Quarto + Reveal.js によるプログラマティックなスライド作成テンプレート集。
 
-## クイックスタート
+## GitHub Pages（オンライン公開）
+
+このリポジトリは GitHub Pages に連携されており、以下のURLでブラウザから直接スライドを閲覧できます：
+
+- 🌐 **ポータル（スライド一覧）**: [https://shota-kawakami.github.io/slide-templates/](https://shota-kawakami.github.io/slide-templates/)
+- 🎨 **デモスライド**: [https://shota-kawakami.github.io/slide-templates/examples/demo.html](https://shota-kawakami.github.io/slide-templates/examples/demo.html)
+
+### 更新と自動公開の手順
+
+```bash
+# 1. スライド作成・編集
+quarto preview <ファイル名>.qmd
+
+# 2. ビルド（docs/ フォルダにHTML生成）
+quarto render <ファイル名>.qmd
+
+# 3. push（GitHub Pagesへ反映）
+git add -A
+git commit -m "スライド追加/更新"
+git push
+```
+数分後に GitHub Pages 側で自動更新されます。
 
 ### 1. 新しいスライドを作る
 
