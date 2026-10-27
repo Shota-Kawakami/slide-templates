@@ -45,9 +45,27 @@ $tableCellBorderColor:     #E4E4E7;
 
 /*-- scss:rules --*/
 
+body, .reveal-viewport, .reveal .slide-background {
+  background-color: #FFFFFF !important;
+  background: #FFFFFF !important;
+}
+
 .reveal {
+  font-family: "Shippori Mincho", "Montserrat", serif !important;
+  color: #18181B !important;
+
+  .slides section {
+    background: transparent !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #18181B !important;
+    font-family: "Montserrat", "Shippori Mincho", serif !important;
+    font-weight: 900 !important;
+  }
+
   strong, b {
-    color: var(--r-bold-color);
+    color: #000000 !important;
     font-weight: 800;
   }
 
@@ -55,18 +73,29 @@ $tableCellBorderColor:     #E4E4E7;
   h2::after {
     content: "";
     display: block;
-    width: 1.8em;
+    width: 2em;
     height: 3px;
     margin-top: .2em;
-    background: #{$accent};
+    background: #E11D48 !important;
   }
 
   table {
     th {
-      background: #FAFAFA;
-      color: #18181B;
+      background: #FAFAFA !important;
+      color: #18181B !important;
       font-weight: 800;
-      border-bottom: 2px solid #18181B;
+      border-bottom: 2px solid #18181B !important;
+    }
+    td {
+      color: #18181B !important;
+      border-bottom: 1px solid #E4E4E7 !important;
     }
   }
+
+  .code-output {
+    border-color: #E11D48 !important;
+    background-color: rgba(225, 29, 72, 0.04) !important;
+    color: #18181B !important;
+  }
 }
+

@@ -53,16 +53,35 @@ $tableCellBorderColor:     $selection;
 
 /*-- scss:rules --*/
 
+body, .reveal-viewport, .reveal .slide-background {
+  background-color: #282A36 !important;
+  background: #282A36 !important;
+}
+
 .reveal {
+  font-family: "Noto Sans JP", sans-serif !important;
+  color: #F8F8F2 !important;
+
+  .slides section {
+    background: transparent !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #BD93F9 !important;
+    font-family: "Noto Sans JP", sans-serif !important;
+    font-weight: 900 !important;
+  }
+
   strong, b {
-    color: var(--r-bold-color);
+    color: #F1FA8C !important;
     font-weight: 700;
   }
   em, i {
-    color: var(--r-italic-color);
+    color: #8BE9FD !important;
   }
   code {
-    color: var(--r-inline-code-color);
+    color: #50FA7B !important;
+    font-family: "Fira Code", monospace !important;
   }
 
   h2::after {
@@ -71,21 +90,32 @@ $tableCellBorderColor:     $selection;
     width: 2.2em;
     height: 4px;
     margin-top: .25em;
-    background: linear-gradient(90deg, #{$purple}, #{$pink});
+    background: linear-gradient(90deg, #BD93F9, #FF79C6) !important;
     border-radius: 2px;
   }
 
   table {
     th {
-      background: var(--sk-surface);
-      color: #{$foreground};
+      background: #44475A !important;
+      color: #F8F8F2 !important;
+      border-bottom: 2px solid #BD93F9 !important;
+    }
+    td {
+      color: #F8F8F2 !important;
+      border-bottom: 1px solid #44475A !important;
     }
   }
 
-  .cell-output pre {
-    background: #{$black} !important;
-    color: #{$foreground} !important;
-    border: 1px solid #{$selection};
-    border-radius: 0 0 6px 6px;
+  .cell-output pre, pre {
+    background: #21222C !important;
+    color: #F8F8F2 !important;
+    border: 1px solid #44475A !important;
+  }
+
+  .code-output {
+    border-color: #50FA7B !important;
+    background-color: rgba(80, 250, 123, 0.08) !important;
+    color: #F8F8F2 !important;
   }
 }
+

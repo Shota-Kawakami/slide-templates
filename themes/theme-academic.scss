@@ -50,14 +50,32 @@ $tableCellBorderColor:     #CBD5E1;
 
 /*-- scss:rules --*/
 
+body, .reveal-viewport, .reveal .slide-background {
+  background-color: #F8FAFC !important;
+  background: #F8FAFC !important;
+}
+
 .reveal {
+  font-family: "Noto Serif JP", "Times New Roman", serif !important;
+  color: #1E293B !important;
+
+  .slides section {
+    background: transparent !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #1E3A8A !important;
+    font-family: "Noto Serif JP", "Times New Roman", serif !important;
+    font-weight: 700 !important;
+  }
+
   strong, b {
-    color: var(--r-bold-color);
+    color: #0F172A !important;
     font-weight: 700;
   }
   em, i {
-    font-family: "EB Garamond", serif;
-    color: var(--r-italic-color);
+    font-family: "EB Garamond", serif !important;
+    color: #881337 !important;
   }
 
   // 伝統的な学術感のある下線
@@ -65,28 +83,39 @@ $tableCellBorderColor:     #CBD5E1;
     content: "";
     display: block;
     width: 2.5em;
-    height: 3px;
+    height: 4px;
     margin-top: .2em;
-    background: #{$primary};
+    background: #1E3A8A !important;
   }
 
   blockquote {
-    font-family: "EB Garamond", "Noto Serif JP", serif;
-    color: #334155;
-    background: #FFFFFF;
-    border-left: 4px solid #{$primary};
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    font-family: "EB Garamond", "Noto Serif JP", serif !important;
+    color: #334155 !important;
+    background: #FFFFFF !important;
+    border-left: 5px solid #1E3A8A !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     padding: .8em 1em;
   }
 
   table {
-    border-top: 2px solid #{$primary};
-    border-bottom: 2px solid #{$primary};
+    border-top: 2px solid #1E3A8A !important;
+    border-bottom: 2px solid #1E3A8A !important;
     th {
-      background: #F1F5F9;
-      color: #{$primary};
+      background: #EEF2F6 !important;
+      color: #1E3A8A !important;
       font-weight: 700;
-      border-bottom: 1.5px solid #{$primary};
+      border-bottom: 2px solid #1E3A8A !important;
+    }
+    td {
+      color: #1E293B !important;
+      border-bottom: 1px solid #CBD5E1 !important;
     }
   }
+
+  .code-output {
+    border-color: #1E3A8A !important;
+    background-color: rgba(30, 58, 138, 0.06) !important;
+    color: #1E293B !important;
+  }
 }
+

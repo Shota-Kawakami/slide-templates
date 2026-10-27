@@ -90,7 +90,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#プレゼン資料モデルマスター金型" id="toc-プレゼン資料モデルマスター金型" class="nav-link active" data-scroll-target="#プレゼン資料モデルマスター金型">プレゼン資料モデル（マスター金型）</a>
   <ul class="collapse">
-  <li><a href="#デザインフォーマット実例5つのバリエーション" id="toc-デザインフォーマット実例5つのバリエーション" class="nav-link" data-scroll-target="#デザインフォーマット実例5つのバリエーション">🎨 デザインフォーマット実例（5つのバリエーション）</a></li>
+  <li><a href="#つのデザインフォーマット-実物ビジュアル比較" id="toc-つのデザインフォーマット-実物ビジュアル比較" class="nav-link" data-scroll-target="#つのデザインフォーマット-実物ビジュアル比較">🎨 5つのデザインフォーマット 実物ビジュアル比較</a></li>
   <li><a href="#同梱テンプレート一覧" id="toc-同梱テンプレート一覧" class="nav-link" data-scroll-target="#同梱テンプレート一覧">📦 同梱テンプレート一覧</a></li>
   <li><a href="#使い方案件フォルダへの展開" id="toc-使い方案件フォルダへの展開" class="nav-link" data-scroll-target="#使い方案件フォルダへの展開">🚀 使い方（案件フォルダへの展開）</a></li>
   </ul></li>
@@ -122,51 +122,102 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>プレゼン資料モデル（マスター金型）</h1>
 <p>このリポジトリは、Quarto + Reveal.js でプログラマティックに美しいプレゼンテーションを作成するための<strong>汎用マスター金型</strong>です。</p>
 <hr>
-<section id="デザインフォーマット実例5つのバリエーション" class="level2">
-<h2 class="anchored" data-anchor-id="デザインフォーマット実例5つのバリエーション">🎨 デザインフォーマット実例（5つのバリエーション）</h2>
-<p>場面・相手・目的に応じて使い分けられる 5 つのデザインフォーマットの実例スライドです。 クリックしてそれぞれの「フォント」「配色」「佇まい」の違いをブラウザでご確認ください：</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>#</th>
-<th>フォーマット名</th>
-<th>特徴・フォント・キーカラー</th>
-<th>実例スライド（クリックで閲覧）</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>①</strong></td>
-<td><strong>Academic</strong></td>
-<td><strong>游明朝 / Noto Serif JP</strong> × ロイヤルネイビー × 厳格</td>
-<td>🎓 <a href="examples/demo_academic.html">Academic 実例スライド</a></td>
-</tr>
-<tr class="even">
-<td><strong>②</strong></td>
-<td><strong>Business</strong></td>
-<td><strong>Noto Sans JP 太字</strong> × ロイヤルブルー × 洗練・説得力</td>
-<td>💼 <a href="examples/demo_business.html">Business 実例スライド</a></td>
-</tr>
-<tr class="odd">
-<td><strong>③</strong></td>
-<td><strong>Tech / Data</strong></td>
-<td><strong>Fira Code (等幅)</strong> × Draculaダーク × 先進的</td>
-<td>💻 <a href="examples/demo_tech.html">Tech / Data 実例スライド</a></td>
-</tr>
-<tr class="even">
-<td><strong>④</strong></td>
-<td><strong>Education</strong></td>
-<td><strong>丸みゴシック (Zen Kaku)</strong> × クリーム地 × やさしさ</td>
-<td>🏫 <a href="examples/demo_education.html">Education 実例スライド</a></td>
-</tr>
-<tr class="odd">
-<td><strong>⑤</strong></td>
-<td><strong>Minimal</strong></td>
-<td><strong>しっぽり明朝</strong> × モノトーン ＋ 鮮烈な赤（TED風）</td>
-<td>🖋️ <a href="examples/demo_minimal.html">Minimal 実例スライド</a></td>
-</tr>
-</tbody>
-</table>
+<section id="つのデザインフォーマット-実物ビジュアル比較" class="level2">
+<h2 class="anchored" data-anchor-id="つのデザインフォーマット-実物ビジュアル比較">🎨 5つのデザインフォーマット 実物ビジュアル比較</h2>
+<p>以下のカードをクリックすると、それぞれの<strong>実物スライド（Web版）</strong>を直接閲覧・操作できます：</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 24px 0;">
+
+  <!-- ① Academic -->
+  <div style="background-color: #F8FAFC; border: 1px solid #CBD5E1; border-radius: 12px; padding: 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); display: flex; flex-direction: column; justify-content: space-between;">
+    <div>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+        <span style="background: #DBEAFE; color: #1E3A8A; font-weight: bold; font-size: 12px; padding: 2px 8px; border-radius: 4px;">① Academic</span>
+        <span style="font-size: 12px; color: #64748B;">学会・研究・論文</span>
+      </div>
+      <h3 style="color: #1E3A8A; font-family: 'Noto Serif JP', serif; font-size: 18px; margin: 0 0 8px 0; border-bottom: 2px solid #1E3A8A; padding-bottom: 4px;" class="anchored">学術研究の動向と展望</h3>
+      <p style="font-family: 'Noto Serif JP', serif; color: #1E293B; font-size: 13px; line-height: 1.6;">
+        落ち着いたペーパーホワイト地に、伝統的な明朝体とロイヤルネイビー。論文のような厳格な信頼感。
+      </p>
+    </div>
+    <div style="margin-top: 16px; pt-3; border-top: 1px solid #E2E8F0; display: flex; justify-content: space-between; align-items: center;">
+      <span style="font-size: 12px; color: #64748B;">游明朝 / Noto Serif</span>
+      <a href="examples/demo_academic.html" style="background: #1E3A8A; color: #FFF; font-size: 12px; padding: 6px 12px; border-radius: 6px; text-decoration: none; font-weight: bold;">実例を見る ↗</a>
+    </div>
+  </div>
+
+  <!-- ② Business -->
+  <div style="background-color: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); display: flex; flex-direction: column; justify-content: space-between;">
+    <div>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+        <span style="background: #2563EB; color: #FFFFFF; font-weight: bold; font-size: 12px; padding: 2px 8px; border-radius: 4px;">② Business</span>
+        <span style="font-size: 12px; color: #64748B;">提案・ピッチ・説得</span>
+      </div>
+      <h3 style="color: #0F172A; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 18px; margin: 0 0 8px 0; border-bottom: 3px solid #2563EB; padding-bottom: 4px;" class="anchored">新規事業戦略提案</h3>
+      <p style="color: #334155; font-size: 13px; line-height: 1.6;">
+        純白背景に鮮烈なロイヤルブルーと極太ゴシック。数字や提案内容がシャープに伝わる説得力。
+      </p>
+    </div>
+    <div style="margin-top: 16px; pt-3; border-top: 1px solid #E2E8F0; display: flex; justify-content: space-between; align-items: center;">
+      <span style="font-size: 12px; color: #64748B;">Jakarta Sans / 太ゴシック</span>
+      <a href="examples/demo_business.html" style="background: #2563EB; color: #FFF; font-size: 12px; padding: 6px 12px; border-radius: 6px; text-decoration: none; font-weight: bold;">実例を見る ↗</a>
+    </div>
+  </div>
+
+  <!-- ③ Tech / Data -->
+  <div style="background-color: #282A36; border: 1px solid #44475A; border-radius: 12px; padding: 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3); display: flex; flex-direction: column; justify-content: space-between;">
+    <div>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+        <span style="background: #BD93F9; color: #282A36; font-weight: bold; font-size: 12px; padding: 2px 8px; border-radius: 4px;">③ Tech / Data</span>
+        <span style="font-size: 12px; color: #A78BFA;">データ分析・開発</span>
+      </div>
+      <h3 style="color: #BD93F9; font-family: monospace; font-size: 18px; margin: 0 0 8px 0; border-bottom: 2px solid #8BE9FD; padding-bottom: 4px;" class="anchored">リアルタイム分析基盤</h3>
+      <p style="color: #F8F8F2; font-size: 13px; line-height: 1.6;">
+        Draculaダーク背景にネオンシアンとパープル。等幅フォント（Fira Code）でコードやグラフが最高に映える。
+      </p>
+    </div>
+    <div style="margin-top: 16px; pt-3; border-top: 1px solid #44475A; display: flex; justify-content: space-between; align-items: center;">
+      <span style="font-size: 12px; color: #8BE9FD; font-family: monospace;">Fira Code / 等幅</span>
+      <a href="examples/demo_tech.html" style="background: #BD93F9; color: #282A36; font-size: 12px; padding: 6px 12px; border-radius: 6px; text-decoration: none; font-weight: bold;">実例を見る ↗</a>
+    </div>
+  </div>
+
+  <!-- ④ Education -->
+  <div style="background-color: #FDFBF7; border: 1px solid #FED7AA; border-radius: 12px; padding: 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); display: flex; flex-direction: column; justify-content: space-between;">
+    <div>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+        <span style="background: #FFEDD5; color: #C2410C; font-weight: bold; font-size: 12px; padding: 2px 8px; border-radius: 4px;">④ Education</span>
+        <span style="font-size: 12px; color: #78716C;">講義・ワークショップ</span>
+      </div>
+      <h3 style="color: #C2410C; font-size: 18px; margin: 0 0 8px 0; border-bottom: 3px solid #D97706; padding-bottom: 4px;" class="anchored">企画発想法ワークショップ</h3>
+      <p style="color: #292524; font-size: 13px; line-height: 1.6;">
+        温かいソフトクリーム地に丸みのあるゴシック（Zen Kaku）。緊張をほぐし、親しみやすい学習空間を演出。
+      </p>
+    </div>
+    <div style="margin-top: 16px; pt-3; border-top: 1px solid #E7E5E4; display: flex; justify-content: space-between; align-items: center;">
+      <span style="font-size: 12px; color: #78716C;">Zen Kaku 丸ゴシック</span>
+      <a href="examples/demo_education.html" style="background: #C2410C; color: #FFF; font-size: 12px; padding: 6px 12px; border-radius: 6px; text-decoration: none; font-weight: bold;">実例を見る ↗</a>
+    </div>
+  </div>
+
+  <!-- ⑤ Minimal -->
+  <div style="background-color: #FFFFFF; border: 1px solid #E4E4E7; border-radius: 12px; padding: 20px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); display: flex; flex-direction: column; justify-content: space-between;">
+    <div>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+        <span style="background: #18181B; color: #FFFFFF; font-weight: bold; font-size: 12px; padding: 2px 8px; border-radius: 4px;">⑤ Minimal</span>
+        <span style="font-size: 12px; color: #71717A;">基調講演・TED風</span>
+      </div>
+      <h3 style="color: #18181B; font-family: serif; font-size: 20px; margin: 0 0 8px 0; border-bottom: 2px solid #E11D48; padding-bottom: 4px;" class="anchored">Less is More.</h3>
+      <p style="color: #27272A; font-size: 13px; line-height: 1.6;">
+        無駄を極限まで削ぎ落とした白黒の世界に、しっぽり明朝と鮮烈なローズレッド1点のみ。圧倒的な高級感。
+      </p>
+    </div>
+    <div style="margin-top: 16px; pt-3; border-top: 1px solid #E4E4E7; display: flex; justify-content: space-between; align-items: center;">
+      <span style="font-size: 12px; color: #71717A;">しっぽり明朝 / Montserrat</span>
+      <a href="examples/demo_minimal.html" style="background: #18181B; color: #FFF; font-size: 12px; padding: 6px 12px; border-radius: 6px; text-decoration: none; font-weight: bold;">実例を見る ↗</a>
+    </div>
+  </div>
+
+</div>
 <ul>
 <li>📐 <strong>設計解説スライド</strong>: <a href="examples/design_formats_plan.html">デザインフォーマット体系化プラン</a></li>
 <li>🛠️ <strong>全機能カタログ</strong>: <a href="examples/demo.html">全スタイル・コンポーネント ショーケース</a></li>

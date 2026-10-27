@@ -45,3 +45,4 @@ css: [../themes/shared.css]
 ::: {.code-output}
 削ぎ落とした先にしか、本当の説得力は宿らない。
 :::
+
