@@ -3,26 +3,50 @@ title: "Quarto スライドテンプレートモデル"
 format:
   html:
     theme: cosmo
-    toc: false
+    toc: true
+    toc-depth: 2
 ---
 
 # プレゼン資料モデル（マスター金型）
 
-このリポジトリは、Quarto + Reveal.js でプレゼンテーション資料を作成するための**汎用設計フレームワーク・テンプレート集**です。
+このリポジトリは、Quarto + Reveal.js でプログラマティックに美しいプレゼンテーションを作成するための**汎用マスター金型**です。
 
-### 🌟 テンプレート・デモ
-- 🎨 [機能デモスライド（全スタイル・機能ショーケース）](examples/demo.html)
-- 📐 [【NEW】デザインフォーマット設計プラン（5つの配色・フォント体系）](examples/design_formats_plan.html)
+---
 
-### 📦 同梱テンプレート一覧
+## 🎨 デザインフォーマット実例（5つのバリエーション）
+
+場面・相手・目的に応じて使い分けられる 5 つのデザインフォーマットの実例スライドです。
+クリックしてそれぞれの「フォント」「配色」「佇まい」の違いをブラウザでご確認ください：
+
+| # | フォーマット名 | 特徴・フォント・キーカラー | 実例スライド（クリックで閲覧） |
+|---|---|---|---|
+| **①** | **Academic** | **游明朝 / Noto Serif JP** × ロイヤルネイビー × 厳格 | 🎓 [Academic 実例スライド](examples/demo_academic.html) |
+| **②** | **Business** | **Noto Sans JP 太字** × ロイヤルブルー × 洗練・説得力 | 💼 [Business 実例スライド](examples/demo_business.html) |
+| **③** | **Tech / Data** | **Fira Code (等幅)** × Draculaダーク × 先進的 | 💻 [Tech / Data 実例スライド](examples/demo_tech.html) |
+| **④** | **Education** | **丸みゴシック (Zen Kaku)** × クリーム地 × やさしさ | 🏫 [Education 実例スライド](examples/demo_education.html) |
+| **⑤** | **Minimal** | **しっぽり明朝** × モノトーン ＋ 鮮烈な赤（TED風） | 🖋️ [Minimal 実例スライド](examples/demo_minimal.html) |
+
+- 📐 **設計解説スライド**: [デザインフォーマット体系化プラン](examples/design_formats_plan.html)
+- 🛠️ **全機能カタログ**: [全スタイル・コンポーネント ショーケース](examples/demo.html)
+
+---
+
+## 📦 同梱テンプレート一覧
+
 1. **汎用ベーシック (`templates/basic.qmd`)**: 最小構成の汎用スライド
 2. **データ分析レポート (`templates/data-report.qmd`)**: CSVやR/Pythonのグラフ埋め込み用
 3. **講義・ゼミ用 (`templates/lecture.qmd`)**: タイムテーブルや演習ブロック付き
 
 ---
 
-### 🚀 新しい資料を作成するときの手順
-このディレクトリ内に個別資料は作らず、案件ごとのフォルダへテンプレートをコピーして使用します。
+## 🚀 使い方（案件フォルダへの展開）
+
+このディレクトリ内には個別案件のスライドを作成せず、別ディレクトリへコピーして作業します。
+
+```bash
+# 例: basic テンプレートで、ゼミ発表フォルダにスライドを作成
+~/Base/プレゼン資料モデル/scripts/new-slide.sh basic ~/Base/ゼミ発表 "中間報告スライド"
+```
 
 詳細は [README.md](README.md) および [RULES.md](RULES.md) を参照してください。
 

@@ -1,0 +1,47 @@
+---
+title: |
+  <b>Less is More.</b> <br>
+  <span style="color: #E11D48; font-size: 0.8em;">本質だけを伝えるプレゼンテーション</span>
+author: "Shota Kawakami"
+date: today
+format:
+  revealjs:
+    theme: [default, ../themes/theme-minimal.scss]
+    slide-number: true
+    transition: fade
+    width: 1400
+    height: 800
+css: [../themes/shared.css]
+---
+
+## ⑤ Minimal（基調講演・TEDフォーマット）
+
+このスライドは **Minimal テーマ** でレンダリングされています。
+
+- **フォント**：`Shippori Mincho`（しっぽり明朝）＋ `Montserrat`（欧文サンセリフ）
+- **配色**：純白 ＋ 漆黒 ＋ **鮮烈なローズレッド（1点のみ）**
+- **印象**：極限の引き算、圧倒的な高級感、言葉の重み、TEDトーク風
+
+## 本質的な問い
+
+::: {.columns}
+::: {.column width="50%"}
+情報が多すぎるプレゼンは、  
+**何も言っていないのと同じ**である。
+:::
+::: {.column width="50%"}
+<span style="font-size: 1.8em; color: #E11D48; font-weight: 800;">1 枚に、<br>1 つの魂。</span>
+:::
+:::
+
+## 比較
+
+| 対象 | 従来のスライド | ミニマルなスライド |
+|---|---|---|
+| 主役 | びっしり書かれた文字 | **話者の言葉** |
+| 色数 | 5色以上 | **白・黒 ＋ 1色** |
+| 目的 | 記録・読み物 | **心を動かすこと** |
+
+::: {.code-output}
+削ぎ落とした先にしか、本当の説得力は宿らない。
+:::

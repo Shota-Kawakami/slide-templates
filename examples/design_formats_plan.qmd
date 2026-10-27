@@ -254,3 +254,4 @@ format:
 <div style="text-align: center;">
 <span class="markp" style="font-size: 1.2em;">このプランで実装を進めてよろしいでしょうか？</span>
 </div>
+

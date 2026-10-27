@@ -1,0 +1,92 @@
+// ============================================================
+// ① Academic テーマ（学術・研究・学会用）
+// ============================================================
+
+/*-- scss:defaults --*/
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+JP:wght@400;600;700;900&family=Fira+Code:wght@400&display=swap');
+
+$systemFontsSerif: "Times New Roman", Times, "Yu Mincho", "Hiragino Mincho ProN", serif;
+
+// --- カラーパレット ---
+$background:  #F8FAFC;       // 眩しすぎない落ち着いたペーパーホワイト
+$foreground:  #1E293B;       // 濃いスレート（黒より柔らかく読みやすい）
+$selection:   #E2E8F0;
+$comment:     #64748B;
+$primary:     #1E3A8A;       // 知的な深みのあるロイヤルネイビー
+$accent:      #881337;       // 厳格さを引き締めるワインレッド
+$gold:        #B45309;
+
+// --- Reveal.js 変数 ---
+$mainColor:                $foreground;
+$headingColor:             $primary;
+$headingTextShadow:        none;
+$headingTextTransform:     none;
+$backgroundColor:          $background;
+$linkColor:                $primary;
+$linkColorHover:           $accent;
+$selectionBackgroundColor: $selection;
+$inlineCodeColor:          $accent;
+$listBulletColor:          $primary;
+$code-block-bg:            #0F172A;
+$code-block-color:         #F8FAFC;
+$mainFont:                 "Noto Serif JP", $systemFontsSerif;
+$codeFont:                 "Fira Code", monospace;
+$presentation-heading-font: "Noto Serif JP", $systemFontsSerif;
+$presentation-heading-font-weight: 700;
+$code-block-font-size:     0.8em;
+
+$tableHeadBorderColor:     $primary;
+$tableCellBorderColor:     #CBD5E1;
+
+:root {
+  --r-bold-color:        #0F172A;
+  --r-italic-color:      #{$accent};
+  --r-inline-code-color: #{$accent};
+  --r-list-bullet-color: #{$primary};
+  --sk-surface:          #E2E8F0;
+  --sk-muted:            #64748B;
+}
+
+/*-- scss:rules --*/
+
+.reveal {
+  strong, b {
+    color: var(--r-bold-color);
+    font-weight: 700;
+  }
+  em, i {
+    font-family: "EB Garamond", serif;
+    color: var(--r-italic-color);
+  }
+
+  // 伝統的な学術感のある下線
+  h2::after {
+    content: "";
+    display: block;
+    width: 2.5em;
+    height: 3px;
+    margin-top: .2em;
+    background: #{$primary};
+  }
+
+  blockquote {
+    font-family: "EB Garamond", "Noto Serif JP", serif;
+    color: #334155;
+    background: #FFFFFF;
+    border-left: 4px solid #{$primary};
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    padding: .8em 1em;
+  }
+
+  table {
+    border-top: 2px solid #{$primary};
+    border-bottom: 2px solid #{$primary};
+    th {
+      background: #F1F5F9;
+      color: #{$primary};
+      font-weight: 700;
+      border-bottom: 1.5px solid #{$primary};
+    }
+  }
+}

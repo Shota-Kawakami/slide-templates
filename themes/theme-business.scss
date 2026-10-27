@@ -1,0 +1,79 @@
+// ============================================================
+// ② Business テーマ（提案・ピッチ・説得用）
+// ============================================================
+
+/*-- scss:defaults --*/
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Noto+Sans+JP:wght@400;700;900&family=Fira+Code:wght@400&display=swap');
+
+// --- カラーパレット ---
+$background:  #FFFFFF;       // クリーンな純白
+$foreground:  #1E293B;       // 視認性の高いダークチャコール
+$selection:   #DBEAFE;
+$comment:     #64748B;
+$primary:     #2563EB;       // 洗練と行動力を表すロイヤルブルー
+$dark-blue:   #1E40AF;
+$accent:      #F59E0B;       // 訴求力のあるアンバーオレンジ
+$success:     #10B981;
+
+// --- Reveal.js 変数 ---
+$mainColor:                $foreground;
+$headingColor:             #0F172A;
+$headingTextShadow:        none;
+$headingTextTransform:     none;
+$backgroundColor:          $background;
+$linkColor:                $primary;
+$linkColorHover:           $dark-blue;
+$selectionBackgroundColor: $selection;
+$inlineCodeColor:          $primary;
+$listBulletColor:          $primary;
+$code-block-bg:            #0F172A;
+$code-block-color:         #F8FAFC;
+$mainFont:                 "Plus Jakarta Sans", "Noto Sans JP", sans-serif;
+$codeFont:                 "Fira Code", monospace;
+$presentation-heading-font: "Plus Jakarta Sans", "Noto Sans JP", sans-serif;
+$presentation-heading-font-weight: 900;
+$code-block-font-size:     0.8em;
+
+$tableHeadBorderColor:     $primary;
+$tableCellBorderColor:     #E2E8F0;
+
+:root {
+  --r-bold-color:        #0F172A;
+  --r-italic-color:      #{$primary};
+  --r-inline-code-color: #{$primary};
+  --r-list-bullet-color: #{$primary};
+}
+
+/*-- scss:rules --*/
+
+.reveal {
+  strong, b {
+    color: var(--r-bold-color);
+    font-weight: 800;
+  }
+
+  // シャープでモダンなグラデーション下線
+  h2::after {
+    content: "";
+    display: block;
+    width: 2.5em;
+    height: 4px;
+    margin-top: .2em;
+    background: linear-gradient(90deg, #{$primary}, #{$accent});
+    border-radius: 2px;
+  }
+
+  table {
+    th {
+      background: #EFF6FF;
+      color: #{$dark-blue};
+      font-weight: 800;
+    }
+  }
+
+  .quarto-figure img, p > img {
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  }
+}

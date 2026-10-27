@@ -1,0 +1,91 @@
+// ============================================================
+// ③ Tech / Data テーマ（技術・データ分析用 / Dracula系進化版）
+// ============================================================
+
+/*-- scss:defaults --*/
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Noto+Sans+JP:wght@400;700;900&display=swap');
+
+// --- Dracula 配色 ---
+$background:  #282A36;
+$foreground:  #F8F8F2;
+$selection:   #44475A;
+$comment:     #6272A4;
+$red:         #FF5555;
+$orange:      #FFB86C;
+$yellow:      #F1FA8C;
+$green:       #50FA7B;
+$purple:      #BD93F9;
+$cyan:        #8BE9FD;
+$pink:        #FF79C6;
+$black:       #21222C;
+
+$mainColor:                $foreground;
+$headingColor:             $purple;
+$headingTextShadow:        none;
+$headingTextTransform:     none;
+$backgroundColor:          $background;
+$linkColor:                $cyan;
+$linkColorHover:           $pink;
+$selectionBackgroundColor: $selection;
+$inlineCodeColor:          $green;
+$listBulletColor:          $cyan;
+$code-block-bg:            $black;
+$code-block-border-color:  $selection;
+$code-block-color:         $foreground;
+$mainFont:                 "Noto Sans JP", sans-serif;
+$codeFont:                 "Fira Code", monospace;
+$presentation-heading-font: "Noto Sans JP", sans-serif;
+$presentation-heading-font-weight: 900;
+$code-block-font-size:     0.8em;
+
+$tableHeadBorderColor:     $selection;
+$tableCellBorderColor:     $selection;
+
+:root {
+  --r-bold-color:        #{$yellow};
+  --r-italic-color:      #{$cyan};
+  --r-inline-code-color: #{$inlineCodeColor};
+  --r-list-bullet-color: #{$listBulletColor};
+  --sk-surface:          #{$selection};
+  --sk-muted:            #{$comment};
+}
+
+/*-- scss:rules --*/
+
+.reveal {
+  strong, b {
+    color: var(--r-bold-color);
+    font-weight: 700;
+  }
+  em, i {
+    color: var(--r-italic-color);
+  }
+  code {
+    color: var(--r-inline-code-color);
+  }
+
+  h2::after {
+    content: "";
+    display: block;
+    width: 2.2em;
+    height: 4px;
+    margin-top: .25em;
+    background: linear-gradient(90deg, #{$purple}, #{$pink});
+    border-radius: 2px;
+  }
+
+  table {
+    th {
+      background: var(--sk-surface);
+      color: #{$foreground};
+    }
+  }
+
+  .cell-output pre {
+    background: #{$black} !important;
+    color: #{$foreground} !important;
+    border: 1px solid #{$selection};
+    border-radius: 0 0 6px 6px;
+  }
+}

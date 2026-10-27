@@ -12,9 +12,8 @@ project:
 format:
   revealjs:
     # --- テーマ ---
-    # "default" を土台に dracula.scss を重ねる
-    # ライト配色にしたいときは dracula.scss → light.scss に変更
-    theme: [default, themes/dracula.scss]
+    # 既定は default。各スライド (.qmd) で themes/theme-*.scss を指定
+    theme: default
 
     # --- レイアウト ---
     width: 1400

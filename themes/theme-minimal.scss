@@ -1,0 +1,72 @@
+// ============================================================
+// ⑤ Minimal テーマ（TED・基調講演・エグゼクティブ用）
+// ============================================================
+
+/*-- scss:defaults --*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=Shippori+Mincho:wght@500;700;800&family=Fira+Code:wght@400&display=swap');
+
+// --- カラーパレット ---
+$background:  #FFFFFF;       // 混じりけのない純白
+$foreground:  #18181B;       // 漆黒に近いジンクブラック
+$selection:   #F4F4F5;
+$comment:     #71717A;
+$primary:     #18181B;       // 見出しも黒で統一
+$accent:      #E11D48;       // 視線を集める鮮烈なローズレッド（1点のみ）
+
+// --- Reveal.js 変数 ---
+$mainColor:                $foreground;
+$headingColor:             $primary;
+$headingTextShadow:        none;
+$headingTextTransform:     none;
+$backgroundColor:          $background;
+$linkColor:                $accent;
+$linkColorHover:           #BE123C;
+$selectionBackgroundColor: $selection;
+$inlineCodeColor:          $accent;
+$listBulletColor:          $accent;
+$code-block-bg:            #18181B;
+$code-block-color:         #FAFAFA;
+$mainFont:                 "Shippori Mincho", "Montserrat", serif;
+$codeFont:                 "Fira Code", monospace;
+$presentation-heading-font: "Montserrat", "Shippori Mincho", serif;
+$presentation-heading-font-weight: 900;
+$code-block-font-size:     0.8em;
+
+$tableHeadBorderColor:     #18181B;
+$tableCellBorderColor:     #E4E4E7;
+
+:root {
+  --r-bold-color:        #000000;
+  --r-italic-color:      #{$accent};
+  --r-inline-code-color: #{$accent};
+  --r-list-bullet-color: #{$accent};
+}
+
+/*-- scss:rules --*/
+
+.reveal {
+  strong, b {
+    color: var(--r-bold-color);
+    font-weight: 800;
+  }
+
+  // ミニマルな細い赤いバー
+  h2::after {
+    content: "";
+    display: block;
+    width: 1.8em;
+    height: 3px;
+    margin-top: .2em;
+    background: #{$accent};
+  }
+
+  table {
+    th {
+      background: #FAFAFA;
+      color: #18181B;
+      font-weight: 800;
+      border-bottom: 2px solid #18181B;
+    }
+  }
+}

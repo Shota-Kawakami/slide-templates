@@ -1,0 +1,56 @@
+---
+title: |
+  <b>データサイエンス & 機械学習基盤</b> <br>
+  <span style="color: #8BE9FD; font-size: 0.8em;">リアルタイム分散処理アーキテクチャ</span>
+author: "Engineering Team / @shota"
+date: today
+format:
+  revealjs:
+    theme: [default, ../themes/theme-tech.scss]
+    slide-number: true
+    transition: convex
+    width: 1400
+    height: 800
+css: [../themes/shared.css]
+---
+
+## ③ Tech / Data（技術・データフォーマット）
+
+このスライドは **Tech / Data テーマ** でレンダリングされています。
+
+- **フォント**：`Noto Sans JP` ＋ `Fira Code`（プログラミング等幅フォント）
+- **配色**：Draculaダーク背景 ＋ **ネオンシアン & パープル** ＋ グリーン
+- **印象**：最先端、エンジニアリング、サイバー、高コントラストで視認性抜群
+
+## システムアーキテクチャ
+
+::: {.columns}
+::: {.column width="50%"}
+### 設計要件
+- 10万 req/sec の高スループット
+- 99.99% の可用性 SLA
+- 秒単位のオートスケーリング
+:::
+::: {.column width="50%"}
+### 実装スタック
+```python
+@app.route("/predict", methods=["POST"])
+def predict():
+    data = request.get_json()
+    model = load_model("v2_release")
+    result = model.inference(data)
+    return jsonify({"status": 200, "result": result})
+```
+:::
+:::
+
+## ベンチマーク測定結果
+
+| テストシナリオ | レイテンシ (p99) | スループット | CPU使用率 |
+|---|---|---|---|
+| レガシー基盤 (v1.0) | 280 ms | 1,200 rps | 88 % |
+| **新基盤 (Rust + Go)** | **12 ms** | **45,000 rps** | **34 %** |
+
+::: {.code-output}
+ボトルネックを解消し、**レイテンシを約 1/23 に短縮**しました。
+:::

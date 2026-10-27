@@ -1,0 +1,77 @@
+// ============================================================
+// ④ Education テーマ（講義・ワークショップ・新歓用）
+// ============================================================
+
+/*-- scss:defaults --*/
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Fira+Code:wght@400&display=swap');
+
+// --- カラーパレット ---
+$background:  #FDFBF7;       // 温かみのあるソフトクリーム
+$foreground:  #292524;       // 優しいウォームチャコール
+$selection:   #FED7AA;
+$comment:     #78716C;
+$primary:     #C2410C;       // 温かいテラコッタ橙
+$green:       #15803D;       // 自然なフォレストグリーン
+$mustard:     #D97706;       // マスタードイエロー
+
+// --- Reveal.js 変数 ---
+$mainColor:                $foreground;
+$headingColor:             $primary;
+$headingTextShadow:        none;
+$headingTextTransform:     none;
+$backgroundColor:          $background;
+$linkColor:                $primary;
+$linkColorHover:           $green;
+$selectionBackgroundColor: $selection;
+$inlineCodeColor:          $green;
+$listBulletColor:          $mustard;
+$code-block-bg:            #1C1917;
+$code-block-color:         #F5F5F4;
+$mainFont:                 "Zen Kaku Gothic New", "Quicksand", sans-serif;
+$codeFont:                 "Fira Code", monospace;
+$presentation-heading-font: "Zen Kaku Gothic New", sans-serif;
+$presentation-heading-font-weight: 900;
+$code-block-font-size:     0.8em;
+
+$tableHeadBorderColor:     $primary;
+$tableCellBorderColor:     #E7E5E4;
+
+:root {
+  --r-bold-color:        #1C1917;
+  --r-italic-color:      #{$primary};
+  --r-inline-code-color: #{$green};
+  --r-list-bullet-color: #{$mustard};
+}
+
+/*-- scss:rules --*/
+
+.reveal {
+  strong, b {
+    color: var(--r-bold-color);
+    font-weight: 800;
+  }
+
+  // 親しみやすい丸みのある下線
+  h2::after {
+    content: "";
+    display: block;
+    width: 2.2em;
+    height: 5px;
+    margin-top: .2em;
+    background: #{$mustard};
+    border-radius: 9999px;
+  }
+
+  table {
+    th {
+      background: #FFF7ED;
+      color: #{$primary};
+      font-weight: 700;
+    }
+  }
+
+  .quarto-figure img, p > img {
+    border-radius: 12px;
+  }
+}
